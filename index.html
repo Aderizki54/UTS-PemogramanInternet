@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VOLTWEAR® | Premium Gym &amp; Athletic Streetwear</title>
+  <meta name="description"
+    content="VOLTWEAR - Luxury heavy-weight gym wear, oversized pump covers, tactical cargo joggers, and high-performance streetwear engineered for the relentless.">
+
+  <!-- Google Fonts: Bebas Neue, Plus Jakarta Sans, Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=Syne:wght@700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+  <!-- =========================================================================
+       1. ANNOUNCEMENT BAR
+       ========================================================================= -->
+  <div class="announcement-bar" id="announcementBar">
+    <div class="container announcement-bar-content">
+      <span class="accent-badge">LIMITED DROP</span>
+      <span>⚡ FREE WORLDWIDE EXPRESS SHIPPING ON ORDERS OVER $100 | USE CODE: <strong>VOLT15</strong> FOR 15% OFF</span>
+    </div>
+    <button type="button" class="announcement-close" id="closeAnnouncementBtn"
+      aria-label="Close Announcement">&times;</button>
+  </div>
+
+  <!-- =========================================================================
+       2. HEADER & STICKY NAVBAR
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container navbar-container">
+
+      <!-- Nav Left: Mobile Toggle & Main Links -->
+      <div class="nav-left">
+        <button type="button" class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open Mobile Menu">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+
+        <nav class="main-nav-links" aria-label="Primary Navigation">
+          <a href="index.html" class="nav-link active">Home</a>
+          <a href="#catalog" class="nav-link filter-gender-trigger" onclick="setGenderFilter('Men')">Men</a>
+          <a href="#catalog" class="nav-link filter-gender-trigger" onclick="setGenderFilter('Women')">Women</a>
+          <a href="#new-arrivals" class="nav-link">New Arrivals</a>
+          <a href="#best-sellers" class="nav-link">Best Sellers</a>
+          <a href="#catalog" class="nav-link sale-link" onclick="setSortFilter('price-low')">Sale</a>
+        </nav>
+      </div>
+
+      <!-- Center: Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="VOLTWEAR Home">
+        <i class="fa-solid fa-bolt-lightning volt-icon"></i>
+        <span>VOLTWEAR</span>
+        <span class="logo-tag">PRO</span>
+      </a>
+
+      <!-- Nav Right: Search, Account, Bag -->
+      <div class="nav-right">
+        <button type="button" class="nav-icon-btn search-trigger-btn" aria-label="Search Catalog">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <a href="#newsletter" class="nav-icon-btn" aria-label="My Account / VIP Club" title="VIP Club">
+          <i class="fa-regular fa-user"></i>
+        </a>
+
+        <button type="button" class="nav-icon-btn cart-trigger-btn cart-icon-wrap" aria-label="Open Shopping Bag">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count-badge hidden">0</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       3. HERO SECTION
+       ========================================================================= -->
+  <section class="hero-section">
+    <div class="hero-bg-container">
+      <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=2000&q=85"
+        alt="VoltWear Athletic Fashion" class="hero-bg-img" />
+      <div class="hero-gradient-overlay"></div>
+    </div>
+
+    <div class="container hero-content">
+      <div class="hero-badge-tag">
+        <i class="fa-solid fa-bolt"></i> WINTER 2026 DROP NOW LIVE
+      </div>
+      <h1 class="hero-title">
+        UNLEASH THE POWER OF <span class="text-volt">FORM &amp; FUNCTION</span>
+      </h1>
+      <p class="hero-description">
+        Engineered for the relentless. Custom-milled 320+ GSM heavy cotton, drop-shoulder silhouettes, and tactical
+        athletic wear built to dominate the gym and define the streets.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="product.html?id=4185" class="btn btn-accent btn-lg">
+          <i class="fa-solid fa-bolt"></i> SHOP 4185 TEE (YOUNGLA SPEC)
+        </a>
+        <a href="#catalog" class="btn btn-outline-white btn-lg">
+          EXPLORE CATALOG
+        </a>
+      </div>
+
+      <!-- Quick Trust Counters -->
+      <div class="hero-stats-row">
+        <div class="hero-stat-item">
+          <span class="stat-num">320<span>GSM</span></span>
+          <span class="stat-label">Heavyweight Organic Cotton</span>
+        </div>
+        <div class="hero-stat-item">
+          <span class="stat-num">500<span>K+</span></span>
+          <span class="stat-label">Athletes Worldwide</span>
+        </div>
+        <div class="hero-stat-item">
+          <span class="stat-num">4.9<span>★</span></span>
+          <span class="stat-label">Verified Customer Rating</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. VALUE PROPOSITIONS / TRUST BAR
+       ========================================================================= -->
+  <section class="trust-bar-section">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-truck-fast"></i></div>
+          <div class="trust-text">
+            <h4>Free Global Express</h4>
+            <p>On all orders over $100</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-arrow-rotate-left"></i></div>
+          <div class="trust-text">
+            <h4>30-Day Effortless Returns</h4>
+            <p>100% money back guarantee</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="trust-text">
+            <h4>Custom Heavyweight Knits</h4>
+            <p>Pre-shrunk zero-sag fabrics</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-dumbbell"></i></div>
+          <div class="trust-text">
+            <h4>Engineered for Athletes</h4>
+            <p>Broad-shoulder ergonomic cuts</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5. SHOP BY CATEGORY
+       ========================================================================= -->
+  <section class="category-section" id="categories">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">CURATED SILHOUETTES</span>
+        <h2 class="section-title">SHOP BY CATEGORY</h2>
+        <p class="section-subtitle">Crafted with architectural precision to elevate your aesthetic in and out of the
+          weight room.</p>
+      </div>
+
+      <div class="category-grid">
+        <!-- Category 1 -->
+        <a href="#catalog" class="category-card" onclick="filterByCatalogCategory('Oversized Tees')">
+          <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=80"
+            alt="Oversized Tees" loading="lazy" />
+          <div class="category-overlay">
+            <h3 class="category-card-title">OVERSIZED TEES</h3>
+            <span class="category-card-cta">Shop Collection <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Category 2 -->
+        <a href="#catalog" class="category-card" onclick="filterByCatalogCategory('Hoodies & Outerwear')">
+          <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=800&q=80"
+            alt="Hoodies & Outerwear" loading="lazy" />
+          <div class="category-overlay">
+            <h3 class="category-card-title">HOODIES &amp; PUMP COVERS</h3>
+            <span class="category-card-cta">Shop Collection <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Category 3 -->
+        <a href="#catalog" class="category-card" onclick="filterByCatalogCategory('Bottoms & Joggers')">
+          <img src="https://images.unsplash.com/photo-1517445312882-bc9910d016b7?auto=format&fit=crop&w=800&q=80"
+            alt="Cargo Joggers" loading="lazy" />
+          <div class="category-overlay">
+            <h3 class="category-card-title">TACTICAL CARGOS &amp; JOGGERS</h3>
+            <span class="category-card-cta">Shop Collection <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Category 4 -->
+        <a href="#catalog" class="category-card" onclick="filterByCatalogCategory('Shorts')">
+          <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=800&q=80"
+            alt="5-Inch Athletic Shorts" loading="lazy" />
+          <div class="category-overlay">
+            <h3 class="category-card-title">5" INSEAM SHORTS</h3>
+            <span class="category-card-cta">Shop Collection <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Category 5 -->
+        <a href="#catalog" class="category-card" onclick="filterByCatalogCategory('Compression & Tanks')">
+          <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80"
+            alt="Compression & Tanks" loading="lazy" />
+          <div class="category-overlay">
+            <h3 class="category-card-title">COMPRESSION &amp; TANKS</h3>
+            <span class="category-card-cta">Shop Collection <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Category 6 -->
+        <a href="#catalog" class="category-card" onclick="filterByCatalogCategory('Women')">
+          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80"
+            alt="Women Sculpt Collection" loading="lazy" />
+          <div class="category-overlay">
+            <h3 class="category-card-title">WOMEN'S SEAMLESS</h3>
+            <span class="category-card-cta">Shop Collection <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       6. NEW ARRIVALS (FEATURED CAROUSEL/GRID)
+       ========================================================================= -->
+  <section class="products-section" id="new-arrivals" style="background-color: var(--color-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">FRESH FROM THE LAB</span>
+        <h2 class="section-title">NEW ARRIVALS</h2>
+        <p class="section-subtitle">Limited edition drops made with raw loopback French terry and custom mineral wash.
+        </p>
+      </div>
+
+      <div class="products-grid" id="newArrivalsGrid">
+        <!-- Rendered dynamically by main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       7. PROMOTIONAL CAMPAIGN BANNER (EDITORIAL LOOKBOOK)
+       ========================================================================= -->
+  <section class="campaign-banner-section">
+    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2000&q=85"
+      alt="The Iron Reign Campaign" class="campaign-bg-img" />
+    <div class="campaign-gradient"></div>
+
+    <div class="container campaign-content">
+      <span class="campaign-tag">⚡ SPECIAL CAMPAIGN DROP</span>
+      <h2 class="campaign-title">THE IRON REIGN COLLECTION</h2>
+      <p class="campaign-desc">
+        Engineered with uncompromising density. Built to survive 10,000 sets and look effortless on the asphalt.
+      </p>
+      <div class="campaign-cta-wrap">
+        <a href="product.html?id=4185" class="btn btn-accent btn-lg">
+          <i class="fa-solid fa-bolt"></i> SHOP 4185 IMMORTAL TEE
+        </a>
+        <a href="#catalog" class="btn btn-outline-white btn-lg">
+          VIEW FULL LOOKBOOK
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       8. BEST SELLERS
+       ========================================================================= -->
+  <section class="products-section" id="best-sellers">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">ATHLETE TESTED &amp; APPROVED</span>
+        <h2 class="section-title">COMMUNITY BEST SELLERS</h2>
+        <p class="section-subtitle">The top-rated silhouettes dominating gym floors worldwide.</p>
+      </div>
+
+      <div class="products-grid" id="bestSellersGrid">
+        <!-- Rendered dynamically by main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       9. MASTER PRODUCT CATALOG WITH FILTERS & SEARCH
+       ========================================================================= -->
+  <section class="products-section" id="catalog" style="border-top: 1px solid var(--color-gray-light);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">ALL PIECES</span>
+        <h2 class="section-title">FULL VOLTWEAR COLLECTION</h2>
+        <p class="section-subtitle" id="catalogProductCount">Showing 12 Products</p>
+      </div>
+
+      <!-- Interactive Filter Bar -->
+      <div class="catalog-filter-bar">
+
+        <!-- Category Pills -->
+        <div class="filter-pills-group">
+          <button type="button" class="filter-pill filter-category-btn active" data-category="all">All</button>
+          <button type="button" class="filter-pill filter-category-btn" data-category="Oversized Tees">Oversized
+            Tees</button>
+          <button type="button" class="filter-pill filter-category-btn"
+            data-category="Hoodies & Outerwear">Hoodies</button>
+          <button type="button" class="filter-pill filter-category-btn"
+            data-category="Bottoms & Joggers">Cargos</button>
+          <button type="button" class="filter-pill filter-category-btn" data-category="Shorts">Shorts</button>
+          <button type="button" class="filter-pill filter-category-btn"
+            data-category="Compression & Tanks">Tanks</button>
+          <button type="button" class="filter-pill filter-category-btn" data-category="Women">Women</button>
+        </div>
+
+        <!-- Gender / Size Pills -->
+        <div class="filter-pills-group">
+          <button type="button" class="filter-pill filter-gender-btn active" data-gender="all">All Genders</button>
+          <button type="button" class="filter-pill filter-gender-btn" data-gender="Men">Men</button>
+          <button type="button" class="filter-pill filter-gender-btn" data-gender="Women">Women</button>
+        </div>
+
+        <!-- Sort Control -->
+        <div class="catalog-sort-wrap">
+          <label for="catalogSortSelect"><i class="fa-solid fa-arrow-down-short-wide"></i> Sort:</label>
+          <select id="catalogSortSelect" class="custom-select">
+            <option value="featured">Featured Picks</option>
+            <option value="newest">Newest Drops</option>
+            <option value="rating">Highest Rated</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+          </select>
+        </div>
+
+      </div>
+
+      <!-- Main Catalog Grid -->
+      <div class="products-grid" id="mainCatalogGrid">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <div id="catalogEmptyState" style="display: none; text-align: center; padding: 4rem 0;">
+        <i class="fa-solid fa-magnifying-glass"
+          style="font-size: 3rem; color: var(--color-gray); margin-bottom: 1rem;"></i>
+        <h3>No products match your selected filters</h3>
+        <p style="color: var(--color-gray-dark); margin-top: 0.5rem;">Try clearing your filters or selecting a different
+          category.</p>
+        <button type="button" class="btn btn-primary" style="margin-top: 1.5rem;" onclick="resetAllFilters()">Reset
+          Filters</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       10. BRAND MANIFESTO / INTRODUCTION
+       ========================================================================= -->
+  <section class="brand-manifesto-section">
+    <div class="container">
+      <div class="manifesto-grid">
+        <div class="manifesto-images">
+          <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=1000&q=80"
+            alt="Iron Discipline" class="manifesto-main-img" />
+          <div class="manifesto-floating-card">
+            <h4>BRED IN THE SQUAT RACK</h4>
+            <p>Every pattern is cut with broader chest measurements, dropped armholes, and anti-sag collar reinforcement
+              to preserve your physique aesthetics.</p>
+          </div>
+        </div>
+
+        <div class="manifesto-text">
+          <span class="section-eyebrow">OUR MANIFESTO</span>
+          <h2>BUILT IN THE GYM. REFINED FOR THE STREETS.</h2>
+          <p>
+            We rejected flimsy synthetic garments that cling and smell. VOLTWEAR was born in Los Angeles out of a desire
+            for authentic heavyweight cotton apparel that commands respect in the weight room and turns heads in the
+            city.
+          </p>
+          <p>
+            Each garment goes through 14 distinct manufacturing stages: custom ring-spinning, acid mineral enzyme
+            washing, reinforced seam twin-needle stitching, and preshrunk steaming so your favorite pump cover never
+            loses its oversized drape.
+          </p>
+
+          <div class="manifesto-points">
+            <div class="point-item">
+              <i class="fa-solid fa-check"></i>
+              <div>
+                <h5>Zero Post-Wash Shrinkage</h5>
+                <span>Precision preshrunk custom cotton</span>
+              </div>
+            </div>
+            <div class="point-item">
+              <i class="fa-solid fa-check"></i>
+              <div>
+                <h5>Reinforced 1.25" Collars</h5>
+                <span>Never bacon, never sag</span>
+              </div>
+            </div>
+            <div class="point-item">
+              <i class="fa-solid fa-check"></i>
+              <div>
+                <h5>4-Way Ergonomic Mobility</h5>
+                <span>Unrestricted heavy compound lifts</span>
+              </div>
+            </div>
+            <div class="point-item">
+              <i class="fa-solid fa-check"></i>
+              <div>
+                <h5>Artisanal Washes</h5>
+                <span>Every piece has unique character</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="product.html?id=4185" class="btn btn-primary">
+            EXPERIENCE THE QUALITY <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       11. INSTAGRAM COMMUNITY LOOKBOOK
+       ========================================================================= -->
+  <section class="instagram-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">JOIN THE SQUAD</span>
+        <h2 class="section-title">#VOLTWEAR ATHLETES</h2>
+        <p class="section-subtitle">Tag @VOLTWEAR on Instagram to be featured on our official global lookbook.</p>
+      </div>
+
+      <div class="insta-grid">
+        <a href="product.html?id=4185" class="insta-tile">
+          <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=600&q=80"
+            alt="Athlete Marcus wearing 4185" loading="lazy" />
+          <div class="insta-overlay">
+            <i class="fa-brands fa-instagram"></i>
+            <span>@marcus_lifts</span>
+          </div>
+        </a>
+        <a href="product.html?id=4186" class="insta-tile">
+          <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=600&q=80"
+            alt="Athlete Jaxson in Apex Hoodie" loading="lazy" />
+          <div class="insta-overlay">
+            <i class="fa-brands fa-instagram"></i>
+            <span>@jaxson.physique</span>
+          </div>
+        </a>
+        <a href="product.html?id=4187" class="insta-tile">
+          <img src="https://images.unsplash.com/photo-1517445312882-bc9910d016b7?auto=format&fit=crop&w=600&q=80"
+            alt="Athlete Tyler in Tactical Cargos" loading="lazy" />
+          <div class="insta-overlay">
+            <i class="fa-brands fa-instagram"></i>
+            <span>@tyler_quads</span>
+          </div>
+        </a>
+        <a href="product.html?id=4188" class="insta-tile">
+          <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=600&q=80"
+            alt="Athlete Alex in Quad-Flex Shorts" loading="lazy" />
+          <div class="insta-overlay">
+            <i class="fa-brands fa-instagram"></i>
+            <span>@alex_thorne</span>
+          </div>
+        </a>
+        <a href="product.html?id=4191" class="insta-tile">
+          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80"
+            alt="Elena in Aura Leggings" loading="lazy" />
+          <div class="insta-overlay">
+            <i class="fa-brands fa-instagram"></i>
+            <span>@elena.fit</span>
+          </div>
+        </a>
+        <a href="product.html?id=4195" class="insta-tile">
+          <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80"
+            alt="Dmitri with 10mm Belt" loading="lazy" />
+          <div class="insta-overlay">
+            <i class="fa-brands fa-instagram"></i>
+            <span>@dmitri_heavy</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       12. NEWSLETTER SUBSCRIPTION
+       ========================================================================= -->
+  <section class="newsletter-section" id="newsletter">
+    <div class="container">
+      <div class="newsletter-box">
+        <i class="fa-solid fa-bolt volt-flash-icon"></i>
+        <h2 class="newsletter-title">JOIN THE VOLT INNER CIRCLE</h2>
+        <p class="newsletter-desc">
+          Subscribe for early drop access (before items sell out), exclusive private sales, and receive <strong>15% off
+            your first order</strong> instantly.
+        </p>
+
+        <form class="newsletter-form" id="homeNewsletterForm">
+          <input type="email" class="newsletter-input" placeholder="Enter your email address..." required
+            aria-label="Email address" />
+          <button type="submit" class="btn btn-accent">
+            CLAIM 15% OFF
+          </button>
+        </form>
+
+        <p class="newsletter-disclaimer">By signing up you agree to receive marketing updates from VOLTWEAR. Unsubscribe
+          anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       13. COMPLETE FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+
+        <!-- Brand Info -->
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <i class="fa-solid fa-bolt-lightning volt-icon"></i>
+            <span>VOLTWEAR</span>
+          </a>
+          <p class="footer-brand-text">
+            Engineered gym apparel and premium streetwear for the dedicated. Heavyweight organic fabrics designed to
+            endure peak training performance.
+          </p>
+          <div class="footer-social-links">
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Shop Column -->
+        <div class="footer-column">
+          <h4>COLLECTIONS</h4>
+          <ul>
+            <li><a href="#catalog" onclick="filterByCatalogCategory('Oversized Tees')">Oversized Tees</a></li>
+            <li><a href="#catalog" onclick="filterByCatalogCategory('Hoodies & Outerwear')">Hoodies &amp; Outerwear</a>
+            </li>
+            <li><a href="#catalog" onclick="filterByCatalogCategory('Bottoms & Joggers')">Cargo Joggers</a></li>
+            <li><a href="#catalog" onclick="filterByCatalogCategory('Shorts')">5" Gym Shorts</a></li>
+            <li><a href="#catalog" onclick="filterByCatalogCategory('Compression & Tanks')">Compression &amp; Tanks</a>
+            </li>
+            <li><a href="#catalog" onclick="filterByCatalogCategory('Women')">Women's Gymwear</a></li>
+          </ul>
+        </div>
+
+        <!-- Support Column -->
+        <div class="footer-column">
+          <h4>ASSISTANCE</h4>
+          <ul>
+            <li><a href="product.html?id=4185#reviews">Product Reviews</a></li>
+            <li><a href="cart.html">View Shopping Bag</a></li>
+            <li><a href="#"
+                onclick="alert('Shipping Policy: Free worldwide express shipping on orders over $100. Standard shipping takes 3-5 business days.'); return false;">Shipping
+                Policy</a></li>
+            <li><a href="#"
+                onclick="alert('Returns: 30 days hassle-free return window on unworn items with tags attached.'); return false;">30-Day
+                Returns</a></li>
+            <li><a href="#"
+                onclick="alert('Support: Contact our 24/7 athlete concierge team at support@voltwear.com'); return false;">Contact
+                Athlete Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Company Column -->
+        <div class="footer-column">
+          <h4>COMPANY</h4>
+          <ul>
+            <li><a href="#categories">About VoltWear</a></li>
+            <li><a href="#newsletter">VIP Membership</a></li>
+            <li><a href="#">Athlete Sponsorships</a></li>
+            <li><a href="#">Sustainability &amp; Cotton</a></li>
+            <li><a href="#">Store Locator</a></li>
+          </ul>
+        </div>
+
+        <!-- Guarantees Column -->
+        <div class="footer-column">
+          <h4>OUR PROMISE</h4>
+          <div class="footer-badge-item">
+            <i class="fa-solid fa-certificate"></i>
+            <span>320+ GSM Heavy Cotton Fabric Spec</span>
+          </div>
+          <div class="footer-badge-item">
+            <i class="fa-solid fa-lock"></i>
+            <span>256-Bit Encrypted Secure Checkout</span>
+          </div>
+          <div class="footer-badge-item">
+            <i class="fa-solid fa-plane-departure"></i>
+            <span>Direct Express Global Delivery</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 VOLTWEAR APPAREL LLC. ALL RIGHTS RESERVED. DESIGNED FOR THE UNSTOPPABLE.
+        </p>
+        <div class="footer-payments-list">
+          <i class="fa-brands fa-cc-visa" title="Visa"></i>
+          <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+          <i class="fa-brands fa-cc-amex" title="American Express"></i>
+          <i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
+          <i class="fa-brands fa-google-pay" title="Google Pay"></i>
+          <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       MODALS, DRAWERS & OVERLAYS
+       ========================================================================= -->
+
+  <!-- Cart Drawer Overlay -->
+  <div class="drawer-overlay" id="cartDrawerOverlay"></div>
+
+  <!-- Cart Drawer -->
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart">
+    <div class="drawer-header">
+      <h3>YOUR BAG</h3>
+      <button type="button" class="drawer-close-btn" id="closeCartDrawerBtn" aria-label="Close Bag">&times;</button>
+    </div>
+
+    <!-- Free Shipping Meter -->
+    <div class="shipping-meter-wrap" id="cartFreeShippingMeter">
+      <!-- Dynamic progress bar -->
+    </div>
+
+    <!-- Drawer Items List -->
+    <div class="drawer-body">
+      <div id="cartDrawerItems" class="drawer-items-list">
+        <!-- Rendered by cart.js -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="cartDrawerEmpty" class="drawer-empty-state" style="display: none;">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <h4>YOUR BAG IS EMPTY</h4>
+        <p>Don't leave empty-handed. Explore our signature heavyweight pump covers and athletic cuts.</p>
+        <a href="#catalog" class="btn btn-primary" onclick="closeCartDrawer()">EXPLORE COLLECTION</a>
+      </div>
+    </div>
+
+    <!-- Drawer Footer -->
+    <div class="drawer-footer" id="cartDrawerFooter">
+      <div class="drawer-calc-row">
+        <span>Subtotal</span>
+        <strong id="drawerSubtotalVal">$0.00</strong>
+      </div>
+      <div class="drawer-calc-row">
+        <span>Estimated Shipping</span>
+        <span id="drawerShippingVal">Calculated</span>
+      </div>
+      <div class="drawer-calc-row total-row">
+        <span>Estimated Total</span>
+        <span id="drawerTotalVal" class="text-volt">$0.00</span>
+      </div>
+
+      <div class="drawer-actions">
+        <a href="cart.html" class="btn btn-accent">
+          PROCEED TO CHECKOUT
+        </a>
+        <a href="cart.html" class="btn btn-outline" style="background-color: #fff;">
+          VIEW FULL BAG &amp; COUPONS
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <a href="index.html" class="brand-logo">
+        <i class="fa-solid fa-bolt-lightning volt-icon"></i>
+        <span>VOLTWEAR</span>
+      </a>
+      <button type="button" class="close-mobile-nav-btn" id="closeMobileNavBtn" aria-label="Close Menu">&times;</button>
+    </div>
+    <div class="mobile-nav-body">
+      <ul class="mobile-links-list">
+        <li><a href="index.html" class="mobile-nav-link active">Home</a></li>
+        <li><a href="product.html?id=4185" class="mobile-nav-link"><span class="text-volt">4185 YoungLA Spec</span> <i
+              class="fa-solid fa-bolt"></i></a></li>
+        <li><a href="#catalog" class="mobile-nav-link" onclick="setGenderFilter('Men')">Men's Gymwear</a></li>
+        <li><a href="#catalog" class="mobile-nav-link" onclick="setGenderFilter('Women')">Women's Gymwear</a></li>
+        <li><a href="#new-arrivals" class="mobile-nav-link">New Arrivals</a></li>
+        <li><a href="#best-sellers" class="mobile-nav-link">Best Sellers</a></li>
+        <li><a href="#catalog" class="mobile-nav-link sale-link" onclick="setSortFilter('price-low')">Sale Drops</a>
+        </li>
+        <li><a href="cart.html" class="mobile-nav-link">Full Cart Page</a></li>
+      </ul>
+    </div>
+    <div class="mobile-nav-footer">
+      <button type="button" class="btn btn-accent btn-sm search-trigger-btn" style="width: 100%;">
+        <i class="fa-solid fa-magnifying-glass"></i> Search Products
+      </button>
+      <div class="footer-social-links">
+        <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="social-link"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#" class="social-link"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Search Modal -->
+  <div class="search-modal" id="searchModal" aria-label="Search Modal">
+    <div class="search-modal-inner">
+      <div class="search-header-row">
+        <h3>SEARCH VOLTWEAR</h3>
+        <button type="button" class="search-close-btn" id="closeSearchModalBtn"
+          aria-label="Close Search">&times;</button>
+      </div>
+
+      <div class="search-input-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchInput"
+          placeholder="Search by name, category, or YoungLA style (e.g. 4185, tee, hoodie, cargo)..."
+          autocomplete="off" />
+      </div>
+
+      <div class="search-results-meta" id="searchCountDisplay">
+        Trending Products
+      </div>
+
+      <div class="search-results-scroll">
+        <div class="search-results-grid" id="searchResultsGrid">
+          <!-- Rendered by main.js -->
+        </div>
+        <div id="searchEmpty" class="search-empty-msg" style="display: none;">
+          <p>No products matched your search. Try searching for "tee", "hoodie", "cargo", or "shorts".</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick View Modal -->
+  <div class="modal-backdrop" id="quickViewModal">
+    <div class="modal-window">
+      <button type="button" class="modal-close-corner" id="closeQuickViewBtn">&times;</button>
+      <div class="qv-content-grid">
+        <div class="qv-image-side">
+          <img src="" id="qvProductImg" alt="Product Quick View" />
+        </div>
+        <div class="qv-details-side">
+          <h3 class="qv-title font-display" id="qvProductTitle">PRODUCT TITLE</h3>
+          <div class="qv-price" id="qvProductPrice">$0.00</div>
+          <p class="qv-desc" id="qvProductDesc">Description</p>
+
+          <span class="qv-section-label">Select Color</span>
+          <div class="qv-swatches" id="qvColorSwatches"></div>
+
+          <span class="qv-section-label">Select Size</span>
+          <div class="qv-sizes" id="qvSizes"></div>
+
+          <button type="button" class="btn btn-accent" id="qvAddToCartBtn" style="width: 100%; margin-top: 1rem;">
+            <i class="fa-solid fa-bag-shopping"></i> ADD TO BAG
+          </button>
+
+          <a href="#" class="qv-full-link" id="qvFullDetailsLink">View Full Product Details &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Scripts in Exact Order -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Filter Helpers for HTML Links -->
+  <script>
+    function filterByCatalogCategory(category) {
+      const btn = document.querySelector(`.filter-category-btn[data-category="${category}"]`);
+      if (btn) btn.click();
+      const catalog = document.getElementById('catalog');
+      if (catalog) catalog.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function setGenderFilter(gender) {
+      const btn = document.querySelector(`.filter-gender-btn[data-gender="${gender}"]`);
+      if (btn) btn.click();
+      const catalog = document.getElementById('catalog');
+      if (catalog) catalog.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function setSortFilter(sort) {
+      const select = document.getElementById('catalogSortSelect');
+      if (select) {
+        select.value = sort;
+        select.dispatchEvent(new Event('change'));
+      }
+      const catalog = document.getElementById('catalog');
+      if (catalog) catalog.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function resetAllFilters() {
+      const catBtn = document.querySelector('.filter-category-btn[data-category="all"]');
+      const genBtn = document.querySelector('.filter-gender-btn[data-gender="all"]');
+      if (catBtn) catBtn.click();
+      if (genBtn) genBtn.click();
+    }
+  </script>
+</body>
+
+</html>

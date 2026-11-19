@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Bag | VOLTWEAR® Official</title>
+  <meta name="description" content="Review your VOLTWEAR order, apply promo codes, and complete your secure checkout.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. ANNOUNCEMENT BAR
+       ========================================================================= -->
+  <div class="announcement-bar" id="announcementBar">
+    <div class="container announcement-bar-content">
+      <span class="accent-badge">LIMITED DROP</span>
+      <span>⚡ FREE WORLDWIDE EXPRESS SHIPPING ON ORDERS OVER $100 | USE CODE: <strong>VOLT15</strong></span>
+    </div>
+    <button type="button" class="announcement-close" id="closeAnnouncementBtn" aria-label="Close Announcement">&times;</button>
+  </div>
+
+  <!-- =========================================================================
+       2. HEADER & NAVBAR
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container navbar-container">
+      
+      <!-- Nav Left -->
+      <div class="nav-left">
+        <button type="button" class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open Mobile Menu">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+
+        <nav class="main-nav-links" aria-label="Primary Navigation">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="index.html#catalog" class="nav-link">Men</a>
+          <a href="index.html#catalog" class="nav-link">Women</a>
+          <a href="index.html#new-arrivals" class="nav-link">New Arrivals</a>
+          <a href="index.html#best-sellers" class="nav-link">Best Sellers</a>
+          <a href="index.html#catalog" class="nav-link sale-link">Sale</a>
+        </nav>
+      </div>
+
+      <!-- Center Logo -->
+      <a href="index.html" class="brand-logo" aria-label="VOLTWEAR Home">
+        <i class="fa-solid fa-bolt-lightning volt-icon"></i>
+        <span>VOLTWEAR</span>
+        <span class="logo-tag">PRO</span>
+      </a>
+
+      <!-- Nav Right -->
+      <div class="nav-right">
+        <button type="button" class="nav-icon-btn search-trigger-btn" aria-label="Search Products">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <a href="index.html#newsletter" class="nav-icon-btn" aria-label="VIP Club" title="VIP Club">
+          <i class="fa-regular fa-user"></i>
+        </a>
+
+        <button type="button" class="nav-icon-btn cart-trigger-btn cart-icon-wrap" aria-label="Open Cart Bag">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count-badge hidden">0</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       3. CART MAIN CONTENT
+       ========================================================================= -->
+  <main class="cart-page-section">
+    <div class="container">
+      
+      <div class="cart-page-header">
+        <h1 class="cart-page-title font-display">YOUR SHOPPING BAG</h1>
+        <p style="color: var(--color-gray-dark); font-size: 0.9rem;">Review your selected pieces and enter your discount code below.</p>
+      </div>
+
+      <!-- Free Shipping Meter Banner -->
+      <div class="shipping-meter-wrap" id="cartPageShippingMeter" style="border-radius: var(--radius-sm); margin-bottom: 2.5rem; border: 1px solid var(--color-gray-light);">
+        <!-- Rendered by js/main.js -->
+      </div>
+
+      <!-- Cart Content Grid (Items + Summary) -->
+      <div class="cart-page-layout" id="cartPageContent">
+        
+        <!-- Left Column: Items Table -->
+        <div class="cart-items-column">
+          <table class="cart-table">
+            <thead>
+              <tr>
+                <th style="width: 50%;">Product Details</th>
+                <th style="width: 15%;">Price</th>
+                <th style="width: 20%;">Quantity</th>
+                <th style="width: 15%; text-align: right;">Total</th>
+              </tr>
+            </thead>
+            <tbody id="cartPageItemsTable">
+              <!-- Rendered by js/main.js -->
+            </tbody>
+          </table>
+
+          <div style="margin-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <a href="index.html#catalog" class="btn btn-outline" style="font-size: 0.8rem;">
+              <i class="fa-solid fa-arrow-left"></i> CONTINUE SHOPPING
+            </a>
+            <button type="button" class="btn btn-outline" style="font-size: 0.8rem; color: var(--color-danger); border-color: var(--color-gray-light);" onclick="if(confirm('Are you sure you want to clear your entire bag?')) { clearCart(); }">
+              <i class="fa-solid fa-trash-can"></i> CLEAR ENTIRE BAG
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Column: Order Summary -->
+        <div class="cart-summary-box">
+          <h2 class="summary-title font-display">ORDER SUMMARY</h2>
+
+          <!-- Promo Code Form -->
+          <form class="promo-form" id="cartPromoForm">
+            <input type="text" id="promoCodeInput" placeholder="Promo code (e.g. VOLT15)" aria-label="Promo Code" />
+            <button type="submit" class="btn btn-primary" style="padding: 0 1.2rem; font-size: 0.78rem;">
+              APPLY
+            </button>
+          </form>
+
+          <!-- Active Coupon Badge -->
+          <div class="coupon-active-badge" id="summaryCouponBadge"></div>
+
+          <!-- Calculation List -->
+          <div class="summary-calc-list">
+            <div class="summary-row">
+              <span>Bag Subtotal</span>
+              <span class="val" id="summarySubtotalVal">$0.00</span>
+            </div>
+
+            <div class="summary-row discount-row" id="summaryDiscountRow" style="display: none;">
+              <span>Promo Discount</span>
+              <span class="val" id="summaryDiscountVal">-$0.00</span>
+            </div>
+
+            <div class="summary-row">
+              <span>Estimated Shipping</span>
+              <span class="val" id="summaryShippingVal">Calculated</span>
+            </div>
+
+            <div class="summary-row">
+              <span>Estimated Sales Tax (8%)</span>
+              <span class="val" id="summaryTaxVal">$0.00</span>
+            </div>
+
+            <div class="summary-row grand-total">
+              <span>Grand Total</span>
+              <span class="val text-volt" id="summaryGrandTotalVal">$0.00</span>
+            </div>
+          </div>
+
+          <!-- Checkout Button -->
+          <button type="button" class="btn btn-accent summary-checkout-btn" id="cartCheckoutBtn">
+            <i class="fa-solid fa-lock"></i> PROCEED TO CHECKOUT
+          </button>
+
+          <!-- Trust & Security Badges -->
+          <div class="summary-security-notes">
+            <span><i class="fa-solid fa-shield-check"></i> 256-Bit SSL Bank Grade Encryption</span>
+            <span><i class="fa-solid fa-truck-fast"></i> Dispatched within 24 Hours from Los Angeles</span>
+            <span><i class="fa-solid fa-arrow-rotate-left"></i> 30-Day Effortless Returns Guaranteed</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Empty State -->
+      <div id="cartPageEmpty" style="display: none; text-align: center; padding: 6rem 0;">
+        <i class="fa-solid fa-bag-shopping" style="font-size: 4rem; color: var(--color-gray-light); margin-bottom: 1.5rem;"></i>
+        <h2 class="font-display" style="font-size: 2.4rem; margin-bottom: 0.8rem;">YOUR BAG IS CURRENTLY EMPTY</h2>
+        <p style="color: var(--color-gray-dark); margin-bottom: 2rem; max-width: 480px; margin-left: auto; margin-right: auto;">
+          Ready to elevate your training aesthetic? Explore our signature heavyweight pump covers and athletic cuts.
+        </p>
+        <a href="index.html#catalog" class="btn btn-primary btn-lg">
+          START SHOPPING NOW
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       4. CHECKOUT SIMULATION MODAL
+       ========================================================================= -->
+  <div class="modal-backdrop" id="checkoutModal">
+    <div class="modal-window checkout-modal-box">
+      <button type="button" class="modal-close-corner" id="closeCheckoutModalBtn">&times;</button>
+      
+      <div class="checkout-header">
+        <h3 class="font-display">EXPRESS CHECKOUT</h3>
+        <p style="font-size: 0.85rem; color: var(--color-gray-dark);">Fast &amp; secure 256-bit encrypted checkout.</p>
+        <div class="checkout-total-pill">Total to Pay: <span id="checkoutModalTotal" class="text-volt">$0.00</span></div>
+      </div>
+
+      <form id="mockCheckoutForm">
+        <div class="checkout-form-grid">
+          <div class="form-group form-full-row">
+            <label for="coEmail">Email Address for Order Confirmation</label>
+            <input type="email" id="coEmail" placeholder="athlete@voltwear.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="coFirstName">First Name</label>
+            <input type="text" id="coFirstName" placeholder="Marcus" required />
+          </div>
+
+          <div class="form-group">
+            <label for="coLastName">Last Name</label>
+            <input type="text" id="coLastName" placeholder="Vance" required />
+          </div>
+
+          <div class="form-group form-full-row">
+            <label for="coAddress">Shipping Address</label>
+            <input type="text" id="coAddress" placeholder="1234 Olympic Blvd, Suite 400" required />
+          </div>
+
+          <div class="form-group">
+            <label for="coCity">City</label>
+            <input type="text" id="coCity" placeholder="Los Angeles" required />
+          </div>
+
+          <div class="form-group">
+            <label for="coZip">Postal / ZIP Code</label>
+            <input type="text" id="coZip" placeholder="90015" required />
+          </div>
+
+          <div class="form-group form-full-row">
+            <label for="coCard">Card Number (Simulated Demo)</label>
+            <input type="text" id="coCard" placeholder="4242 •••• •••• 4242" value="4242 •••• •••• 4242" required />
+          </div>
+
+          <div class="form-group">
+            <label for="coExp">Expiry</label>
+            <input type="text" id="coExp" placeholder="MM/YY" value="12/28" required />
+          </div>
+
+          <div class="form-group">
+            <label for="coCvc">CVC</label>
+            <input type="text" id="coCvc" placeholder="789" value="789" required />
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-accent btn-lg" style="width: 100%;">
+          <i class="fa-solid fa-lock"></i> COMPLETE ORDER NOW
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       5. FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding-top: 0;">
+        <p class="footer-copyright">&copy; 2026 VOLTWEAR APPAREL LLC. ALL RIGHTS RESERVED.</p>
+        <div class="footer-payments-list">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-brands fa-cc-amex"></i>
+          <i class="fa-brands fa-cc-apple-pay"></i>
+          <i class="fa-brands fa-google-pay"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search Modal -->
+  <div class="search-modal" id="searchModal">
+    <div class="search-modal-inner">
+      <div class="search-header-row">
+        <h3>SEARCH VOLTWEAR</h3>
+        <button type="button" class="search-close-btn" id="closeSearchModalBtn">&times;</button>
+      </div>
+      <div class="search-input-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" placeholder="Search products..." autocomplete="off" />
+      </div>
+      <div class="search-results-meta" id="searchCountDisplay">Trending Products</div>
+      <div class="search-results-scroll">
+        <div class="search-results-grid" id="searchResultsGrid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+
